@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TechThrive 2.0 - Intra-College Hackathon at Quantum University. Theme: Smart Campus.">
+    <title>TechThrive 2.0 | Smart Campus Hackathon</title>
+    <link rel="icon" type="image/png" href="assets/logo.svg">
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="problem-statements.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+   <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="assets/Logo2.png" alt="TechThrive Logo" class="logo-img">
+        </a>
+
+        <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="#problem-statements">Problem Statements</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#about-event">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li>
+                <button class="btn btn-primary nav-cta" onclick="openRegisterModal()">
+                    Register
+                </button>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <!-- Slideshow Background (Managed by JS) -->
+        <div class="hero-slideshow" id="heroSlideshow">
+            <div class="slide active" style="background-image: url('assets/hero10.JPG');"></div>
+            <div class="slide" style="background-image: url('assets/hero4.JPG');"></div>
+            <div class="slide" style="background-image: url('assets/hero7.JPG');"></div>
+            <div class="slide" style="background-image: url('assets/hero6.JPG');"></div>
+            <div class="slide" style="background-image: url('assets/hero8.JPG');"></div>
+            <div class="slide" style="background-image: url('assets/hero9.JPG');"></div>
+            <!-- Fallback overlay if images fail -->
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container hero-content">
+            <span class="badge-theme"><i class="fa-solid fa-lightbulb"></i> Theme: Smart Campus - Digitalizing Campus
+                Life</span>
+            <h1 class="glitch-text" data-text="TECHTHRIVE 2.0">TECHTHRIVE 2.0</h1>
+            <p class="tagline">Innovate. Integrate. Inspire.</p>
+
+            <div class="hero-meta">
+                <span><i class="fa-regular fa-calendar"></i> 02 Dec 2025</span>
+                <span><i class="fa-regular fa-clock"></i> 9:00 AM - 4:00 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> Shyamji Auditorium</span>
+            </div>
+
+            <div class="hero-actions">
+                <button class="btn btn-primary btn-large" onclick="openRegisterModal()">
+                    Register Now <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="#problem-statements" class="btn btn-outline btn-large">
+                    View Problem Statements
+                </a>
+            </div>
+
+            <a href="https://docs.google.com/document/d/1f6csTeuZf5Hoj5z-2-8Yuy3lzl391Euh/edit?usp=sharing&ouid=110475960769074966492&rtpof=true&sd=true" target="_blank" class="download-link">
+                <i class="fa-solid fa-download"></i> Download Problem Statements
+            </a>
+        </div>
+    </header>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <div id="countdown" class="countdown-grid">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+            <div id="event-started-msg" class="hidden">Event has started!</div>
+        </div>
+    </section>
+
+
+    <!-- Problem Statements -->
+    <section class="section" id="problem-statements">
+    <div class="container">
+
+        <h2  class="title">Problem Statments</h2>
+
+        <h2>Track A</h2>
+        <div id="accordion"></div>
+
+        <h2>Track B – Open Innovation</h2>
+        <div id="openTrack"></div>
+
+    </div>
+</section>
+
+
+
+
+    <!-- Timeline Section -->
+    <section class="timeline-section section-padding" id="timeline">
+        <div class="container">
+            <h2 class="section-title">Event <span class="accent">Schedule</span></h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item highlight">
+                    <div class="timeline-time">9:00 AM</div>
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Inauguration</h3>
+                        <p>Welcome address and event briefing</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item ">
+                    <div class="timeline-time">9:30 AM – 1:00 PM</div>
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Coding & Development</h3>
+                        <p>Prototype building and implementation phase</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">1:00 PM – 2:00 PM</div>
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Judging – Round 1</h3>
+                        <p>Initial screening & evaluation of projects</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">2:00 PM – 3:00 PM</div>
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Judging – Round 2</h3>
+                        <p>Top 10 teams present to panel</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">3:00 PM – 3:30 PM</div>
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-spinner"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Result Compilation</h3>
+                        <p>Judges finalize scores and rankings</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">3:30 PM – 4:00 PM</div>
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Prize Distribution</h3>
+                        <p>Winners, Runner-Ups & Certificates</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About the Event -->
+
+<section class="about-section section-padding" id="about-event">
+        <div class="container">
+            <div class="about-wrapper">
+
+                <div class="about-content">
+                    <h2 class="section-title">About <span class="accent">TechThrive 2.0</span></h2>
+
+                    <p>
+                        <strong>TechThrive 2.0</strong> is an Intra-College Hackathon organized by the Codex Club to
+                        encourage innovation, collaboration, and real-world problem-solving among students.
+                        This 7-hour intensive coding event challenges participants to develop impactful,
+                        technology-driven solutions under the theme:
+                    </p>
+
+                    <h3 class="about-theme">“Smart Campus – Digitalizing Campus Life”</h3>
+
+                    <p>
+                        Teams will design creative and practical solutions for improving academic, administrative,
+                        and student-life experiences through technology such as AI, IoT, Web, and Automation.
+                        The event promotes hands-on learning, teamwork, and presentation skills—providing a
+                        simulated environment of real-world tech culture.
+                    </p>
+
+                    <ul class="about-points">
+                        <li><i class="fa-solid fa-code"></i> Team-based innovation challenge</li>
+                        <li><i class="fa-solid fa-brain"></i> Real-world problem solving</li>
+                        <li><i class="fa-solid fa-rocket"></i> Rapid prototyping & presentation</li>
+                        <li><i class="fa-solid fa-award"></i> Trophies, medals & certificates for winners</li>
+                    </ul>
+                </div>
+
+                <div class="about-highlight">
+                    <div class="highlight-card">
+                        <h3>Event Date</h3>
+                        <p>02 December 2025</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Duration</h3>
+                        <p>9:00 AM – 4:00 PM</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Venue</h3>
+                        <p>Shyamji Auditorium, QU</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <!-- Prizes Section -->
+<section class="prize-section section-padding" id="prizes">
+    <div class="container">
+        <h2 class="section-title">Prizes</h2>
+
+        <div class="prize-list">
+
+            <div class="prize-item">
+                <i class="fa-solid fa-trophy"></i>
+                <div>
+                    <h3>Winner</h3>
+                    <p>Trophy • Certificates • Medal</p>
+                </div>
+            </div>
+
+            <div class="prize-item">
+                <i class="fa-solid fa-medal"></i>
+                <div>
+                    <h3>Runner-Up</h3>
+                    <p>Trophy • Certificates • Medal</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- FAQ Section (Dropdown) -->
+<section class="faq-section section-padding" id="faq">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Who can participate in TechThrive 2.0?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    Only students of Quantum University are eligible to participate.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What is the maximum team size?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    Each team can have a maximum of 5 members.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is there any registration fee?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    Yes, the participation fee is ₹150 per team.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do we need to bring our own laptops?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    Yes, participants must bring their own laptops and required accessories.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Will internet and power be provided?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    Yes, Wi-Fi, power sockets, and extension boards will be provided.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <footer class="footer">
+    <div class="container footer-container">
+
+        <div class="footer-left">
+            <h3>TechThrive <span class="accent">2.0</span></h3>
+            <p>Intra-College Hackathon</p>
+            <p>Quantum University, Roorkee</p>
+        </div>
+
+        <div class="footer-center">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#about-event">About</a></li>
+                <li><a href="#timeline">Schedule</a></li>
+                <li><a href="#prizes">Prizes</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-right">
+            <h4>Organized By</h4>
+            <p>Codex Club</p>
+
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/codex_quantumuniversity/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/codex-qu-b9390435b"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/qucodex"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 TechThrive 2.0 | All Rights Reserved</p>
+    </div>
+</footer>
+
+
+
+
+    <!-- Floating Action Button (Mobile) -->
+    <button id="fabRegister" class="fab" onclick="openRegisterModal()" aria-label="Register Now">
+        <i class="fa-solid fa-user-plus"></i>
+    </button>
+<script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+            faqItems.forEach(i => {
+                if (i !== item) i.classList.remove('active');
+            });
+            item.classList.toggle('active');
+        });
+    });
+    const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
+
+// Highlight on click
+navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// Highlight on scroll
+window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+</script>
+    
+<script src="problem-statements.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

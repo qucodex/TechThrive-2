@@ -1,0 +1,111 @@
+{
+  "date": "22 November 2025",
+  "event": {
+    "name": "TECHTHRIVE 2.0: PROBLEM STATEMENTS",
+    "organized_by": "CodeX Club",
+    "theme": "Smart Campus - Digitalizing Campus Life",
+    "duration": "7 Hours",
+    "overview": "The objective of TechThrive 2.0 is to build practical, technology-driven solutions that solve real-world inefficiencies faced by students, faculty, and administration within our campus."
+  },
+
+  "trackA": [
+    {
+      "id": 1,
+      "title": "Campus Event Hub",
+      "problem": "Information about club events, workshops, and seminars is often scattered across WhatsApp groups and notice boards, leading to missed opportunities and low participation.",
+      "challenge": "Build a centralized \"Event Dashboard\" where all clubs can post upcoming events.",
+      "features": [
+        "Students can view a calendar of events.",
+        "Filter events by category (Technical, Cultural, Sports).",
+        "\"One-Click Register\" button."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "The \"On-Duty\" (OD) Automator",
+      "problem": "Students participating in hackathons, workshops, or sports often get marked \"Absent\" in regular classes because the manual OD approval process is slow or paperwork gets lost.",
+      "challenge": "Create a workflow system to protect student attendance.",
+      "features": [
+        "Student applies for OD for a specific event/date.",
+        "Event Organizer (Admin) approves the request digitally.",
+        "System generates a final list of \"Approved ODs\" for the attendance authority."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The \"Lost & Found\" Digital Board",
+      "problem": "Valuable items (ID cards, chargers, bottles) lost on campus rarely find their way back to owners because physical notices are ignored.",
+      "challenge": "Develop a digital, image-based Lost & Found Feed.",
+      "features": [
+        "Users can upload details of found items (Photo + Location Found).",
+        "Search functionality for owners to find their lost items.",
+        "A \"Claim\" button to contact the finder."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Unified 360° Feedback & Grievance Portal",
+      "problem": "Student feedback regarding facilities (Hostel, Mess, Buses, Canteen, Faculty, Management) is often unorganized, informal, or ignored.",
+      "challenge": "Build a centralized, anonymous Grievance & Feedback System.",
+      "features": [
+        "Select category (e.g., \"Bus Route 5\", \"Canteen Hygiene\", \"Classroom\").",
+        "Submit complaint/suggestion anonymously.",
+        "Admin View: System routes the complaint to the relevant simulated dashboard."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "\"Campus Genie\" - RAG-based AI Assistant",
+      "problem": "Students struggle to find specific rules, exam schedules, or old circulars buried in emails or the college website.",
+      "challenge": "Build an AI Chatbot using Retrieval-Augmented Generation (RAG).",
+      "features": [
+        "Ingest college documents (Rulebooks, Notices, Holiday Lists).",
+        "Allow students to ask natural questions.",
+        "Bot provides accurate answers based only on uploaded documents."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Smart Academic Resource Sharer (AI-Enhanced)",
+      "problem": "Finding quality notes and Previous Year Questions (PYQs) is difficult, and students often don't have time to read full documents.",
+      "challenge": "Design a peer-to-peer Notes Repository with AI capabilities.",
+      "features": [
+        "Upload/Download functionality for notes (sorted by Subject/Semester).",
+        "AI generates Summary or Short Quiz when a PDF is uploaded."
+      ]
+    },
+    {
+      "id": 7,
+      "title": "AI-Based Attendance System (With Validation Feature)",
+      "problem": "Traditional attendance methods are time-consuming, prone to proxy attendance, and lack real-time validation and centralized tracking.",
+      "challenge": "Design a secure AI-based attendance system.",
+      "features": [
+        "AI-powered face recognition to automatically mark attendance.",
+        "Validation to prevent proxy attendance.",
+        "Real-time database update with student-wise and class-wise records.",
+        "Dashboard to view, export, and validate attendance reports."
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Blockchain Certificate Validator",
+      "problem": "Verifying the authenticity of participation certificates or event winners is difficult, leading to possible forgeries.",
+      "challenge": "Create a Blockchain-based Verification System.",
+      "features": [
+        "Issue certificates as digital assets recorded on a blockchain.",
+        "Unique Hash ID or QR Code for every certificate.",
+        "Verification page to confirm authenticity."
+      ]
+    }
+  ],
+
+  "trackB": {
+    "title": "Open Innovation: Smart Campus",
+    "description": "If your team has a unique idea that fits the \"Smart Campus\" theme but isn't listed above, you may choose this track.",
+    "requirements": [
+      "You must define a clear problem statement related to campus life.",
+      "The solution must use technology (AI, Web, App, or Automation).",
+      "The solution must reduce manual effort or improve efficiency."
+    ]
+  }
+}
