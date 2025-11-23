@@ -7,7 +7,6 @@
     "duration": "7 Hours",
     "overview": "The objective of TechThrive 2.0 is to build practical, technology-driven solutions that solve real-world inefficiencies faced by students, faculty, and administration within our campus."
   },
-
   "trackA": [
     {
       "id": 1,
@@ -56,11 +55,11 @@
     {
       "id": 5,
       "title": "Smart Mess Waste Reduction System",
-      "problem": "Massive amounts of food are wasted daily in hostel messes because the kitchen staff relies on rough estimates rather than actual attendance, and there is no way to track student preferences to avoid unpopular dishes.",
-      "challenge": "Design a digital platform that bridges the gap between student attendance, kitchen production, and waste disposal.",
+      "problem": "Hostel messes generate significant food waste due to inaccurate headcount estimates and a lack of visibility into student meal preferences.",
+      "challenge": "Design a digital platform to connect student attendance, food preparation, and waste management.",
       "features": [
-        "A simple app interface where students mark Eating or Skipping for the next meal in advance to provide an accurate headcount.",
-        "If food is leftover, the system automatically notifies registered NGOs or nearby shelters with the quantity available for immediate donation pickup."
+        "A simple interface where students confirm or skip upcoming meals to provide an accurate headcount.",
+        "Any leftover food is automatically reported to registered NGOs or shelters for quick donation pickup."
       ]
     },
     {
@@ -90,8 +89,7 @@
       "problem": "Traditional attendance methods are time-consuming, prone to proxy attendance, and lack real-time validation and centralized tracking.",
       "challenge": "Design a secure AI-based attendance system.",
       "features": [
-        "AI-powered face recognition to automatically mark attendance.",
-        "Validation to prevent proxy attendance.",
+        "AI-powered face recognition to automatically mark attendance and Validation to prevent proxy attendance.",
         "Real-time database update with student-wise and class-wise records.",
         "Dashboard to view, export, and validate attendance reports."
       ]
@@ -108,7 +106,6 @@
       ]
     }
   ],
-
   "trackB": {
     "title": "Open Innovation: Smart Campus",
     "description": "If your team has a unique idea that fits the \"Smart Campus\" theme but isn't listed above, you may choose this track.",
