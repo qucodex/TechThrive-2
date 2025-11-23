@@ -47,7 +47,7 @@ fetch("problem-data.json")
                 <h3>${data.trackB.title}</h3>
                 <p>${data.trackB.description}</p>
                 <h4>Requirements:</h4>
-                <ul>
+                <ul class="feature-list">
                     ${data.trackB.requirements.map(r => `<li>${r}</li>`).join("")}
                 </ul>
             </div>

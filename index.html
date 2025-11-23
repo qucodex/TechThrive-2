@@ -27,31 +27,31 @@
 <body>
 
     <!-- Navigation -->
-   <nav class="navbar" id="navbar">
-    <div class="container nav-container">
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
 
-        <a href="index.html" class="logo">
-            <img src="assets/Logo2.png" alt="TechThrive Logo" class="logo-img">
-        </a>
+            <a href="index.html" class="logo">
+                <img src="assets/Logo2.png" alt="TechThrive Logo" class="logo-img">
+            </a>
 
-        <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+            <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-        <ul class="nav-links">
-            <li><a href="#problem-statements">Problem Statements</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#about-event">About</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li>
-                <button class="btn btn-primary nav-cta" onclick="openRegisterModal()">
-                    Register
-                </button>
-            </li>
-        </ul>
+            <ul class="nav-links">
+                <li><a href="#problem-statements">Problem Statements</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#about-event">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li>
+                    <button class="btn btn-primary nav-cta" onclick="openRegisterModal()">
+                        Register
+                    </button>
+                </li>
+            </ul>
 
-    </div>
-</nav>
+        </div>
+    </nav>
 
 
 
@@ -70,7 +70,9 @@
         </div>
 
         <div class="container hero-content">
-            <span class="badge-theme"><i class="fa-solid fa-lightbulb"></i> Theme: Smart Campus - Digitalizing Campus
+            <span class="badge-theme" onclick="document.getElementById('theme').scrollIntoView({behavior: 'smooth'})"
+                style="cursor: pointer; "><i class="fa-solid fa-lightbulb"></i> Theme: Smart Campus - Digitalizing
+                Campus
                 Life</span>
             <h1 class="glitch-text" data-text="TECHTHRIVE 2.0">TECHTHRIVE <span class="accent">2.0</span></h1>
             <p class="tagline">Innovate. Integrate. Inspire.</p>
@@ -90,111 +92,113 @@
                 </a>
             </div>
 
-            <a href="https://docs.google.com/document/d/1f6csTeuZf5Hoj5z-2-8Yuy3lzl391Euh/edit?usp=sharing&ouid=110475960769074966492&rtpof=true&sd=true" target="_blank" class="download-link">
+            <a href="https://docs.google.com/document/d/1f6csTeuZf5Hoj5z-2-8Yuy3lzl391Euh/edit?usp=sharing&ouid=110475960769074966492&rtpof=true&sd=true"
+                target="_blank" class="download-link">
                 <i class="fa-solid fa-download"></i> Download Problem Statements
             </a>
         </div>
     </header>
 
-   
+
     <!-- theme section -->
     <section class="theme-section section-padding" id="theme">
-    <div class="container">
-        
-        <div class="theme-container">
-            
-            <div class="theme-content">
-                <div class="badge">This Hackathon Theme</div>
-                <h2 class="theme-title">Smart <span class="text-gradient">Campus</span></h2>
-                <h3 class="theme-subtitle">Digitalizing Campus Life</h3>
-                <p class="theme-description">
-                    Reimagine the student experience through thoughtful development of innovative solutions, making campus life more seamless, secure, and sustainable.
-                </p>
+        <div class="container">
 
-                <div class="theme-features">
-                    <div class="feature-box">
-                        <i class="fa-solid fa-wifi"></i>
-                        <span>Smart Services</span>
-                    </div>
-                    <div class="feature-box">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Smart Security</span>
-                    </div>
-                    <div class="feature-box">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Smart Learning</span>
-                    </div>
-                    <div class="feature-box">
-                        <i class="fa-solid fa-bus"></i>
-                        <span>Smart Infrastructure</span>
+            <div class="theme-container">
+
+                <div class="theme-content">
+                    <div class="badge">Hackathon Theme</div>
+                    <h2 class="theme-title">Smart <span class="text-gradient">Campus</span></h2>
+                    <h3 class="theme-subtitle">Digitalizing Campus Life</h3>
+                    <p class="theme-description">
+                        Reimagine the student experience through thoughtful development of innovative solutions, making
+                        campus life more seamless, secure, and sustainable.
+                    </p>
+
+                    <div class="theme-features">
+                        <div class="feature-box">
+                            <i class="fa-solid fa-wifi"></i>
+                            <span>Smart Services</span>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Smart Security</span>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Smart Learning</span>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fa-solid fa-bus"></i>
+                            <span>Smart Infrastructure</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="theme-visual">
-                <div class="glow-circle"></div>
-                <div class="digital-card">
-                    <i class="fa-solid fa-graduation-cap main-icon"></i>
-                    <div class="floating-badge top-right">
-                        <i class="fa-solid fa-check"></i> Innovate
-                    </div>
-                    <div class="floating-badge bottom-left">
-                        <i class="fa-solid fa-server"></i> Connect
+                <div class="theme-visual">
+                    <div class="glow-circle"></div>
+                    <div class="digital-card">
+                        <i class="fa-solid fa-graduation-cap main-icon"></i>
+                        <div class="floating-badge top-right">
+                            <i class="fa-solid fa-check"></i> Innovate
+                        </div>
+                        <div class="floating-badge bottom-left">
+                            <i class="fa-solid fa-server"></i> Connect
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
- <!-- Countdown Section -->
+    </section>
+    <!-- Countdown Section -->
     <section class="countdown-section">
-    <div class="container">
-        
-        <div class="countdown-header">
-            <span class="countdown-badge">
-                <i class="fa-regular fa-clock"></i> Event Starts In
-            </span>
-        </div>
+        <div class="container">
 
-        <div id="countdown" class="countdown-grid">
-            <div class="time-box">
-                <span id="days">00</span>
-                <span class="label">Days</span>
+            <div class="countdown-header">
+                <span class="countdown-badge">
+                    <i class="fa-regular fa-clock"></i> Event Starts In
+                </span>
             </div>
-            <div class="time-box">
-                <span id="hours">00</span>
-                <span class="label">Hours</span>
+
+            <div id="countdown" class="countdown-grid">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
             </div>
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <span class="label">Minutes</span>
-            </div>
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <span class="label">Seconds</span>
-            </div>
+            <div id="event-started-msg" class="hidden">Event has started!</div>
         </div>
-        <div id="event-started-msg" class="hidden">Event has started!</div>
-    </div>
-</section>
+    </section>
 
     <!-- Problem Statements -->
     <section class="section" id="problem-statements">
-    <div class="container">
+        <div class="container">
 
-        <h2  class="title">Problem <span class="accent">Statments</span></h2>
+            <h2 class="title">Problem <span class="accent">Statments</span></h2>
 
-        
 
-        <h2>Track A - Focused Challenges</h2>
-        <div id="accordion"></div>
 
-        <h2>Track B - Open Innovation</h2>
-        <div id="openTrack"></div>
+            <h2>Track A - Focused Challenges</h2>
+            <div id="accordion"></div>
 
-    </div>
-</section>
+            <h2>Track B - Open Innovation</h2>
+            <div id="openTrack"></div>
+
+        </div>
+    </section>
 
 
 
@@ -213,7 +217,8 @@
                     </div>
                     <div class="timeline-content">
                         <h3>Inauguration</h3>
-                        <p>The inauguration will feature ribbon cutting and candle lighting, followed by brief addresses from distinguished guests offering insights and encouragement for the event’s success.</p>
+                        <p>The inauguration will feature ribbon cutting and candle lighting, followed by brief addresses
+                            from distinguished guests offering insights and encouragement for the event’s success.</p>
                     </div>
                 </div>
 
@@ -224,7 +229,9 @@
                     </div>
                     <div class="timeline-content">
                         <h3>Coding & Development</h3>
-                        <p>Participants will develop and refine functional prototypes during a focused four-hour sprint, emphasizing collaboration, technical execution, innovation, and practical implementation with mentor support.</p>
+                        <p>Participants will develop and refine functional prototypes during a focused four-hour sprint,
+                            emphasizing collaboration, technical execution, innovation, and practical implementation
+                            with mentor support.</p>
                     </div>
                 </div>
 
@@ -235,7 +242,8 @@
                     </div>
                     <div class="timeline-content">
                         <h3>Judging – Round 1</h3>
-                        <p>Judges will review each team’s project at their respective tables, evaluating performance and assigning scores, with top-rated teams advancing to the next round.</p>
+                        <p>Judges will review each team’s project at their respective tables, evaluating performance and
+                            assigning scores, with top-rated teams advancing to the next round.</p>
                     </div>
                 </div>
 
@@ -246,7 +254,8 @@
                     </div>
                     <div class="timeline-content">
                         <h3>Judging – Round 2</h3>
-                        <p>The top ten teams will present their projects on stage to the expert panel, delivering a ten-minute demonstration of their prototype, solution, and implementation.</p>
+                        <p>The top ten teams will present their projects on stage to the expert panel, delivering a
+                            ten-minute demonstration of their prototype, solution, and implementation.</p>
                     </div>
                 </div>
 
@@ -257,7 +266,9 @@
                     </div>
                     <div class="timeline-content">
                         <h3>Result</h3>
-                        <p>Results will be compiled based on presentation clarity, problem relevance, technical innovation, functionality, feasibility, scalability, and overall impact, determining the final winners.</p>
+                        <p>Results will be compiled based on presentation clarity, problem relevance, technical
+                            innovation, functionality, feasibility, scalability, and overall impact, determining the
+                            final winners.</p>
                     </div>
                 </div>
 
@@ -268,7 +279,8 @@
                     </div>
                     <div class="timeline-content">
                         <h3>Prize Distribution</h3>
-                        <p>The ceremony will honor winners and runners-up with trophies, medals, and certificates, followed by a group photo session to formally conclude the event.</p>
+                        <p>The ceremony will honor winners and runners-up with trophies, medals, and certificates,
+                            followed by a group photo session to formally conclude the event.</p>
                     </div>
                 </div>
 
@@ -279,7 +291,7 @@
 
     <!-- About the Event -->
 
-<section class="about-section section-padding" id="about-event">
+    <section class="about-section section-padding" id="about-event">
         <div class="container">
             <div class="about-wrapper">
 
@@ -329,130 +341,132 @@
         </div>
     </section>
 
-        <!-- Prizes Section -->
-<section class="prize-section section-padding" id="prizes">
-    <div class="container">
-        <h2 class="section-title">Prizes</h2>
+    <!-- Prizes Section -->
+    <section class="prize-section section-padding" id="prizes">
+        <div class="container">
+            <h2 class="section-title">Prizes</h2>
 
-        <div class="prize-list">
+            <div class="prize-list">
 
-            <div class="prize-item">
-                <i class="fa-solid fa-trophy"></i>
-                <div>
-                    <h3>Winner</h3>
-                    <p>Trophy • Certificates • Medal</p>
+                <div class="prize-item">
+                    <i class="fa-solid fa-trophy"></i>
+                    <div>
+                        <h3>Winner</h3>
+                        <p>Trophy • Certificates • Medal</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="prize-item">
-                <i class="fa-solid fa-medal"></i>
-                <div>
-                    <h3>Runner-Up</h3>
-                    <p>Trophy • Certificates • Medal</p>
+                <div class="prize-item">
+                    <i class="fa-solid fa-medal"></i>
+                    <div>
+                        <h3>Runner-Up</h3>
+                        <p>Trophy • Certificates • Medal</p>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
-<!-- FAQ Section (Dropdown) -->
-<section class="faq-section section-padding" id="faq">
-    <div class="container">
-        <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+    </section>
+    <!-- FAQ Section (Dropdown) -->
+    <section class="faq-section section-padding" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
 
-        <div class="faq-list">
+            <div class="faq-list">
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    Who can participate in TechThrive 2.0?
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <div class="faq-answer">
-                    Only students of Quantum University are eligible to participate.
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Who can participate in TechThrive 2.0?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Only students of Quantum University are eligible to participate.
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    What is the maximum team size?
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <div class="faq-answer">
-                    Each team can have a maximum of 5 members.
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the maximum team size?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Each team can have a maximum of 5 members.
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    Is there any registration fee?
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <div class="faq-answer">
-                    Yes, the participation fee is ₹150 per team.
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there any registration fee?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, the participation fee is ₹150 per team.
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    Do we need to bring our own laptops?
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <div class="faq-answer">
-                    Yes, participants must bring their own laptops and required accessories.
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do we need to bring our own laptops?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, participants must bring their own laptops and required accessories.
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    Will internet and power be provided?
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <div class="faq-answer">
-                    Yes, Wi-Fi, power sockets, and extension boards will be provided.
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Will internet and power be provided?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, Wi-Fi, power sockets, and extension boards will be provided.
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <footer class="footer">
-    <div class="container footer-container">
+        <div class="container footer-container">
 
-        <div class="footer-left">
-            <h3>TechThrive <span class="accent">2.0</span></h3>
-            <p>Intra-College Hackathon</p>
-            <p>Quantum University, Roorkee</p>
-        </div>
-
-        <div class="footer-center">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="#about-event">About</a></li>
-                <li><a href="#timeline">Schedule</a></li>
-                <li><a href="#prizes">Prizes</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-right">
-            <h4>Organized By</h4>
-            <p>Codex Club</p>
-
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/codex_quantumuniversity/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/codex-qu-b9390435b"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/qucodex"><i class="fa-brands fa-github"></i></a>
+            <div class="footer-left">
+                <h3>TechThrive <span class="accent">2.0</span></h3>
+                <p>Intra-College Hackathon</p>
+                <p>Quantum University, Roorkee</p>
             </div>
+
+            <div class="footer-center">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about-event">About</a></li>
+                    <li><a href="#timeline">Schedule</a></li>
+                    <li><a href="#prizes">Prizes</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Organized By</h4>
+                <p>Codex Club</p>
+
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/codex_quantumuniversity/"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/codex-qu-b9390435b"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/qucodex"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
         </div>
 
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2025 TechThrive 2.0 | All Rights Reserved</p>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <p>© 2025 TechThrive 2.0 | All Rights Reserved</p>
+        </div>
+    </footer>
 
 
 
@@ -461,78 +475,82 @@
     <button id="fabRegister" class="fab" onclick="openRegisterModal()" aria-label="Register Now">
         <i class="fa-solid fa-user-plus"></i>
     </button>
-<script>
-    const faqItems = document.querySelectorAll('.faq-item');
+    <script>
+        console.log("%cHello, Hacker 👨‍💻", "color:#00ffcc; font-size:18px; font-weight:bold;");
+        console.log("Most people will never see this.");
+        console.log("You just proved you think differently.");
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
+        const faqItems = document.querySelectorAll('.faq-item');
 
-        question.addEventListener('click', () => {
-            faqItems.forEach(i => {
-                if (i !== item) i.classList.remove('active');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                faqItems.forEach(i => {
+                    if (i !== item) i.classList.remove('active');
+                });
+                item.classList.toggle('active');
             });
-            item.classList.toggle('active');
         });
-    });
-    const navLinks = document.querySelectorAll('.nav-links a');
-const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id]');
 
-// Highlight on click
-navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-    });
-});
+        // Highlight on click
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
 
-// Highlight on scroll
-window.addEventListener('scroll', () => {
-    let current = '';
+        // Highlight on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        const sectionHeight = section.offsetHeight;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.offsetHeight;
 
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-</script>
-
-<script>
-    const timelineCards = document.querySelectorAll('.timeline-content');
-
-    timelineCards.forEach(card => {
-        card.addEventListener('click', function () {
-            
-            // If this card is already active, close it and stop here
-            if (this.classList.contains('active')) {
-                this.classList.remove('active');
-                return;
-            }
-
-            // Otherwise, close other cards (accordion effect)
-            timelineCards.forEach(otherCard => {
-                otherCard.classList.remove('active');
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
             });
 
-            // Activate the clicked card
-            this.classList.add('active');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
         });
-    });
-</script>
 
-    
-<script src="problem-statements.js"></script>
+    </script>
+
+    <script>
+        const timelineCards = document.querySelectorAll('.timeline-content');
+
+        timelineCards.forEach(card => {
+            card.addEventListener('click', function () {
+
+                // If this card is already active, close it and stop here
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    return;
+                }
+
+                // Otherwise, close other cards (accordion effect)
+                timelineCards.forEach(otherCard => {
+                    otherCard.classList.remove('active');
+                });
+
+                // Activate the clicked card
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+
+    <script src="problem-statements.js"></script>
     <script src="script.js"></script>
 </body>
 
