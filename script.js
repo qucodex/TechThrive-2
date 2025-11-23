@@ -119,7 +119,7 @@ function initSlideshow() {
         elements.heroSlides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % elements.heroSlides.length;
         elements.heroSlides[currentSlide].classList.add('active');
-    }, 10000); // Change every 5 seconds
+    }, 5000); // Change every 5 seconds
 }
 
 
