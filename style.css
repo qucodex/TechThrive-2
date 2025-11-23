@@ -1,29 +1,35 @@
-/* TechThrive 2.0 - Stylesheet
-    Theme: Dark Tech / Cyberpunk Lite
-    Author: CodeX Club Generator
-*/
+/* ============================================
+   TechThrive 2.0 - Main Stylesheet
+   Theme: Dark Tech / Cyberpunk Lite
+   Author: CodeX Club
+   ============================================ */
 
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
 :root {
-    /* Colors */
-    --bg-dark: #0a0e17;       /* Deep Navy/Black */
-    --bg-card: #131b2c;       /* Slightly lighter for cards */
-    --text-main: #e0e6ed;     /* Off-white */
-    --text-muted: #94a3b8;    /* Grey */
-    --accent: #00f0ff;        /* Cyan (Cyberpunk blue) */
+    /* Color Palette */
+    --bg-black:   #030712;
+    --bg-card: #131b2c;
+    --text-main: #e0e6ed;
+    --text-muted: #94a3b8;
+    --accent: #00f0ff;
     --accent-glow: rgba(0, 240, 255, 0.4);
-    --secondary: #7000ff;     /* Purple */
+    --secondary: #7000ff;
     --border: #1e293b;
     
-    /* Fonts */
+    /* Typography */
     --font-heading: 'Orbitron', sans-serif;
     --font-body: 'Poppins', sans-serif;
 
-    /* Spacing */
+    /* Layout */
     --container-width: 1200px;
     --nav-height: 70px;
 }
 
-/* Reset & Base */
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -42,42 +48,88 @@ body {
     overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; }
-button { cursor: pointer; border: none; font-family: inherit; }
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
 
-/* Utilities */
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.section-padding { padding: 80px 0; }
-.accent { color: var(--accent); }
-.hidden { display: none !important; }
+.section-padding {
+    padding: 40px 0;
+}
 
-/* Typography */
-h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
+.accent {
+    color: var(--accent);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 3.2rem;
     position: relative;
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
-}
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--accent);
-    margin: 10px auto 0;
+    color: #ffffff;
 }
 
-/* Buttons */
+.section-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), #0077ff);
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-title::after {
+        width: 50px;
+    }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -94,6 +146,7 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     color: #000;
     box-shadow: 0 0 15px var(--accent-glow);
 }
+
 .btn-primary:hover {
     background: #fff;
     box-shadow: 0 0 25px var(--accent-glow);
@@ -105,13 +158,19 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     color: var(--accent);
     background: transparent;
 }
+
 .btn-outline:hover {
     background: rgba(0, 240, 255, 0.1);
 }
 
-.btn-block { width: 100%; text-align: center; }
+.btn-block {
+    width: 100%;
+    text-align: center;
+}
 
-/* Navbar */
+/* ============================================
+   NAVIGATION
+   ============================================ */
 .navbar {
     position: fixed;
     top: 0;
@@ -130,18 +189,18 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     height: 100%;
 }
 
-/* Logo Image (instead of text) */
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
 }
 
 .logo-img {
-    height: 52px;   /* you can change if needed */
+    height: 52px;
     width: auto;
 }
 
-/* Nav links */
+/* Navigation Links */
 .nav-links {
     display: flex;
     gap: 30px;
@@ -153,48 +212,11 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     font-weight: 500;
 }
 
-.nav-links a:hover { 
-    color: var(--accent); 
+.nav-links a:hover {
+    color: var(--accent);
 }
 
-/* Mobile toggle */
-.mobile-toggle {
-    display: none;
-    background: none;
-    color: var(--text-main);
-    font-size: 1.5rem;
-}
-
-
-/* Mobile navbar */
-@media (max-width: 768px) {
-    
-    .mobile-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: var(--nav-height);
-        right: 0;
-        width: 100%;
-        background: var(--bg-dark);
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem 0;
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .logo-img {
-        height: 50px;
-    }
-}
-
-/* Active Link Style */
+/* Active Link State */
 .nav-links a.active {
     color: var(--accent);
     font-weight: 600;
@@ -211,8 +233,17 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     background: var(--accent);
 }
 
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    background: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+}
 
-/* Hero Section */
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .hero {
     height: 100vh;
     min-height: 600px;
@@ -224,34 +255,55 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     padding-top: var(--nav-height);
 }
 
-/* Slideshow */
+/* Hero Slideshow */
 .hero-slideshow {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -2;
 }
+
 .slide {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-.slide.active { opacity: 1; }
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
 
 .hero-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to bottom, rgba(10,14,23,0.8), var(--bg-dark));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 14, 23, 0.8), var(--bg-dark));
     z-index: -1;
 }
 
+/* Hero Content */
 .hero-content h1 {
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(0,240,255,0.3);
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
 }
 
 .tagline {
@@ -295,52 +347,409 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     color: var(--text-muted);
     text-decoration: underline;
 }
-
-/* Countdown */
+/* ============================================
+   COUNTDOWN SECTION (Smaller & Synchronized)
+   ============================================ */
 .countdown-section {
-    background: #0f1623;
-    padding: 20px 0;
     border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-black);
+    /* background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);  */
+    padding: 40px 0; /* Slightly reduced padding */
+    position: relative;
+    border-top: 1px solid transparent; 
 }
 
 .countdown-grid {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px; /* Reduced gap */
+    flex-wrap: wrap; 
+    cursor: default; /* Shows it's a group */
 }
 
+/* Glass Box Style */
 .time-box {
-    text-align: center;
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    
+    /* SMALLER DESKTOP SIZE */
+    width: 90px;  /* Reduced from 110px */
+    height: 90px; /* Reduced from 110px */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    
+    /* Smooth Transition for the "Trigger All" effect */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* --- THE "TRIGGER ALL" HOVER EFFECT --- */
+/* When you hover the PARENT grid, ALL children boxes activate */
+.countdown-grid:hover .time-box {
+    border-color: var(--accent);
+    transform: translateY(-5px); /* All lift up together */
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.15); /* All glow together */
+}
+
+/* The Numbers */
 .time-box span:first-child {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Reduced from 2.8rem */
     font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums; 
+}
+
+/* The Labels */
+.label {
+    font-size: 0.65rem; /* Reduced size */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent); 
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Badge styling (If you added the badge from previous step) */
+.countdown-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Event Started Message */
+#event-started-msg {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ============================================
+   MOBILE RESPONSIVENESS (Compact Version)
+   ============================================ */
+@media (max-width: 768px) {
+    .countdown-section {
+        padding: 30px 0; 
+    }
+
+    .countdown-grid {
+        gap: 10px; 
+    }
+
+    .time-box {
+        /* Mobile size stays compact */
+        width: 65px;
+        height: 70px;
+        border-radius: 8px; 
+    }
+
+    .time-box span:first-child {
+        font-size: 1.5rem;
+        margin-bottom: 2px;
+    }
+
+    .label {
+        font-size: 0.5rem; 
+        letter-spacing: 0.5px;
+    }
+}
+/* ============================================
+   COUNTDOWN BADGE STYLING
+   ============================================ */
+.countdown-header {
+    text-align: center;
+    margin-bottom: 25px; /* Space between badge and numbers */
+}
+
+.countdown-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    
+    background: rgba(0, 212, 255, 0.1); /* Low opacity accent background */
+    border: 1px solid var(--accent);     /* Neon border */
+    color: var(--accent);                /* Neon text color */
+    
+    padding: 8px 24px;
+    border-radius: 50px;                 /* Pill shape */
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    
+    /* Subtle Glow Animation */
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+    animation: badge-pulse 2s infinite;
+}
+
+/* Optional: Icon adjustment */
+.countdown-badge i {
+    font-size: 1rem;
+}
+
+/* The Pulse Animation */
+@keyframes badge-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(0, 212, 255, 0); } /* Expands outward */
+    100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+}
+
+/* Mobile Adjustment for Badge */
+@media (max-width: 768px) {
+    .countdown-header {
+        margin-bottom: 20px;
+    }
+    
+    .countdown-badge {
+        padding: 6px 16px;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+    
+    .countdown-badge i {
+        font-size: 0.85rem;
+    }
+}
+/* ============================================
+   THEME SECTION (Smart Campus)
+   ============================================ */
+.theme-section {
+    border-top: 1px solid var(--border);
+    background-color: var(--bg-black);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap; /* Stacks on mobile */
+}
+
+/* --- Left Column: Typography --- */
+.theme-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 212, 255, 0.1); /* Low opacity accent */
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.theme-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Gradient Text Effect */
+.text-gradient {
+    background: linear-gradient(to right, var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.theme-description {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+/* --- Feature Grid (Small Icons) --- */
+.theme-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.feature-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    padding: 12px 18px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.feature-box i {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.feature-box:hover {
+    border-color: var(--accent);
+    transform: translateX(5px);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+/* --- Right Column: Visual Animation --- */
+.theme-visual {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+}
+
+/* The Glowing Background Blob */
+.glow-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    opacity: 0.4;
+    animation: glow-pulse 4s infinite ease-in-out;
+    z-index: 0;
+}
+
+/* The Central "Digital Card" */
+.digital-card {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--accent);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.digital-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.main-icon {
+    font-size: 5rem;
+    color: #fff;
+    filter: drop-shadow(0 0 10px var(--accent));
+}
+
+/* Floating Elements around the card */
+.floating-badge {
+    position: absolute;
+    background: #1a1a1a;
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-badge i {
     color: var(--accent);
 }
 
-.time-box .label {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
+.top-right {
+    top: -20px;
+    right: -40px;
+    animation-delay: 0s;
 }
 
-.slide::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);  /* Adjust: 0.4 = lighter, 0.8 = darker */
+.bottom-left {
+    bottom: -20px;
+    left: -40px;
+    animation-delay: 1.5s;
 }
 
-/* About Section - TechThrive 2.0 */
+/* --- Animations --- */
+@keyframes glow-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.1); opacity: 0.6; }
+}
 
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    .theme-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .theme-description {
+        margin: 0 auto 30px auto;
+    }
+
+    .theme-features {
+        margin: 0 auto;
+    }
+    
+    .theme-visual {
+        height: 300px;
+        margin-top: 30px;
+    }
+    
+    .theme-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
 .about-section {
-    background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);
     border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-black); 
 }
 
 .about-wrapper {
@@ -379,8 +788,7 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     color: var(--accent);
 }
 
-/* Right side highlight cards */
-
+/* Highlight Cards */
 .about-highlight {
     display: flex;
     flex-direction: column;
@@ -414,71 +822,14 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     color: var(--text-main);
 }
 
-/* Responsive Fix */
-@media (max-width: 850px) {
-    .about-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .about-highlight {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .highlight-card {
-        width: 100%;
-    }
-}
-
-/* Simple Prize Section */
-
-.prize-section {
-    background: var(--bg-dark);
+/* ============================================
+   TIMELINE SECTION
+   ============================================ */
+.timeline-section {
     border-top: 1px solid var(--border);
+    background-color: var(--bg-black);
+     /* background: radial-gradient(circle at top, #0f172a 0%, #020617 70%); */
 }
-
-.prize-list {
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.prize-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.prize-item i {
-    color: var(--accent);
-    font-size: 1.5rem;
-}
-
-.prize-item h3 {
-    font-size: 1.05rem;
-    margin-bottom: 2px;
-}
-
-.prize-item p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-/* Simple Prize Section - Matching About & Timeline */
-
-.prize-section {
-    background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-
-/* Timeline - Enhanced Version */
 
 .timeline {
     position: relative;
@@ -545,7 +896,7 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     padding: 18px 22px;
     border-radius: 15px;
     border: 1px solid var(--border);
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
 .timeline-content h3 {
@@ -558,39 +909,325 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     font-size: 0.95rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ============================================
+   LAPTOP & DESKTOP UPGRADE (Min-width: 992px)
+   ============================================ */
+@media (min-width: 992px) {
+
+    /* 1. Center the Main Line */
     .timeline {
         padding-left: 0;
+        max-width: 1000px; /* Wider for laptops */
     }
 
     .timeline::before {
-        left: 10px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
+    /* 2. Reset Item Width & Positioning */
     .timeline-item {
-        padding-left: 50px;
+        width: 50%;
+        padding: 0;
+        margin-bottom: 60px;
+        position: relative;
+    }
+    
+    /* Remove the default mobile hover shift, we will do a better one */
+    .timeline-item:hover {
+        transform: none; 
     }
 
-    .timeline-dot {
-        left: 0;
-    }
-
+    /* 3. Styling the Content Box */
     .timeline-content {
-        padding: 15px;
+        position: relative;
+        width: 100%; /* relative to the 50% parent */
+        border-radius: 12px;
+    }
+    
+    /* Hover Effect for Card */
+    .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+        border-color: var(--accent);
+        transition: all 0.3s ease;
+    }
+
+    /* 4. LEFT SIDE ITEMS (Odd Children) */
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-right: 45px; /* Space for the dot/line */
+        text-align: left;
+    }
+
+    /* Position Dot for Left Items */
+    .timeline-item:nth-child(odd) .timeline-dot {
+        left: auto;
+        right: -14px; /* Half of dot width (28px) */
+    }
+
+    /* Position Time for Left Items (Move to Right side) */
+    .timeline-item:nth-child(odd) .timeline-time {
+        position: absolute;
+        top: 18px;
+        right: -225px; /* Push to the other side of the line */
+        width: 200px;
+        text-align: left;
+    }
+
+    /* Connector Line for Left Items */
+    .timeline-item:nth-child(odd) .timeline-content::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        right: -45px; /* Reach the center line */
+        width: 45px;
+        height: 2px;
+        background: linear-gradient(to right, var(--border), var(--accent));
+        opacity: 0.5;
+        z-index: -1;
+    }
+
+    /* 5. RIGHT SIDE ITEMS (Even Children) */
+    .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: 45px;
+        text-align: left;
+    }
+
+    /* Position Dot for Right Items */
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -14px;
+    }
+
+    /* Position Time for Right Items (Move to Left side) */
+    .timeline-item:nth-child(even) .timeline-time {
+        position: absolute;
+        top: 18px;
+        left: -200px; /* Push to the other side */
+        width: 200px;
+        text-align: left;
+    }
+
+    /* Connector Line for Right Items */
+    .timeline-item:nth-child(even) .timeline-content::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: -45px;
+        width: 45px;
+        height: 2px;
+        background: linear-gradient(to left, var(--border), var(--accent));
+        opacity: 0.5;
+        z-index: -1;
+    }
+    
+    /* 6. Highlight Logic fixes for Center Layout */
+    .timeline-item.highlight .timeline-dot {
+        box-shadow: 0 0 20px var(--accent);
+    }
+    .timeline-content p {
+    text-align: left !important;
+    line-height: 1.6;
+}
+
+}
+
+/* ============================================
+   INTERACTIVE REVEAL (Mobile + Desktop)
+============================================ */
+
+/* Make the card look clickable */
+.timeline-content {
+    cursor: pointer;
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease, 
+                border-color 0.3s ease;
+}
+
+/* Hide paragraph by default */
+.timeline-content p {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: all 0.5s ease;
+}
+
+/* -----------------------------
+   MOBILE — open using CLICK
+------------------------------*/
+.timeline-content.active p {
+    max-height: 150px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+/* -----------------------------
+   Arrow Styling
+------------------------------*/
+.timeline-content h3::after {
+    content: '\f078';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8rem;
+    float: right;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+    color: var(--accent);
+}
+
+/* Rotate arrow on active (mobile click) */
+.timeline-content.active h3::after {
+    transform: rotate(180deg);
+}
+
+
+/* -----------------------------
+   LAPTOP & DESKTOP — open on HOVER
+------------------------------*/
+@media (min-width: 992px) {
+
+    .timeline-content:hover p {
+        max-height: 150px;
+        opacity: 1;
+        margin-top: 10px;
+    }
+
+    .timeline-content:hover h3::after {
+        transform: rotate(180deg);
+    }
+
+    /* Optional: disable pointer look for desktop if needed */
+    /* .timeline-content { cursor: default; } */
+}
+
+
+/* ============================================
+   PRIZE SECTION
+   ============================================ */
+.prize-section {
+    border-top: 1px solid var(--border);
+    background-color: var(--bg-black);
+    position: relative;
+    padding-bottom: 80px; /* Extra space at bottom */
+}
+
+.prize-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Stacks on mobile, side-by-side on desktop */
+    margin-top: 40px;
+}
+
+/* Base Card Style */
+.prize-item {
+    background: rgba(255, 255, 255, 0.03); /* Glassy Background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px; /* Prevents them from getting too wide */
+    
+    /* Smooth Animation */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Icon Styling */
+.prize-item i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+/* Text Styling */
+.prize-item h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.prize-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ============================================
+   SPECIFIC STYLING (Gold vs Silver)
+   ============================================ */
+
+/* 1. THE WINNER (First Item) - GOLD THEME */
+.prize-item:nth-child(1) {
+    border-top: 4px solid #FFD700; /* Gold Top Border */
+}
+
+.prize-item:nth-child(1) i {
+    color: #FFD700;
+    text-shadow: 0 0 25px rgba(255, 215, 0, 0.4); /* Gold Glow */
+}
+
+/* Winner Hover Effect */
+.prize-item:nth-child(1):hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.15);
+    border-color: rgba(255, 215, 0, 0.5);
+}
+
+.prize-item:nth-child(1):hover i {
+    transform: scale(1.1) rotate(5deg); /* Subtle pop and twist */
+}
+
+/* 2. THE RUNNER-UP (Second Item) - SILVER THEME */
+.prize-item:nth-child(2) {
+    border-top: 4px solid #C0C0C0; /* Silver Top Border */
+}
+
+.prize-item:nth-child(2) i {
+    color: #C0C0C0;
+    text-shadow: 0 0 25px rgba(192, 192, 192, 0.4); /* Silver Glow */
+}
+
+/* Runner-Up Hover Effect */
+.prize-item:nth-child(2):hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(192, 192, 192, 0.15);
+    border-color: rgba(192, 192, 192, 0.5);
+}
+
+.prize-item:nth-child(2):hover i {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* ============================================
+   MOBILE TWEAK
+   ============================================ */
+@media (max-width: 768px) {
+    .prize-item {
+        margin-bottom: 20px;
+        padding: 30px 20px;
+    }
+    
+    .prize-item h3 {
+        font-size: 1.5rem;
     }
 }
 
-/* Timeline Background – match About section */
-
-.timeline-section {
-    background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-/* Dropdown FAQ Section */
-
+/* ============================================
+   FAQ SECTION
+   ============================================ */
 .faq-section {
     background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);
     border-top: 1px solid var(--border);
@@ -627,6 +1264,10 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     align-items: center;
 }
 
+.faq-question:hover {
+    background: rgba(0, 240, 255, 0.03);
+}
+
 .faq-question i {
     color: var(--accent);
     transition: transform 0.3s ease;
@@ -643,8 +1284,7 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     padding: 0 1.2rem;
 }
 
-/* Active state */
-
+/* FAQ Active State */
 .faq-item.active .faq-answer {
     max-height: 200px;
     padding: 0.8rem 1.2rem 1rem;
@@ -654,14 +1294,9 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     transform: rotate(45deg);
 }
 
-/* Hover effect */
-
-.faq-question:hover {
-    background: rgba(0, 240, 255, 0.03);
-}
-
-/* Footer Section */
-
+/* ============================================
+   FOOTER SECTION
+   ============================================ */
 .footer {
     background: #020617;
     border-top: 1px solid var(--border);
@@ -676,7 +1311,7 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     padding-bottom: 2rem;
 }
 
-.footer h3, 
+.footer h3,
 .footer h4 {
     color: var(--text-main);
     margin-bottom: 8px;
@@ -726,24 +1361,15 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     color: var(--text-muted);
 }
 
-/* Responsive */
-
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-socials {
-        justify-content: center;
-    }
-}
-
-
-/* Modal */
+/* ============================================
+   MODAL
+   ============================================ */
 .modal {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 2000;
     display: flex;
     justify-content: center;
@@ -760,7 +1386,10 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
 
 .modal-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
 }
@@ -784,15 +1413,27 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
 
 .close-modal {
     position: absolute;
-    top: 15px; right: 15px;
+    top: 15px;
+    right: 15px;
     font-size: 1.5rem;
     color: var(--text-muted);
     background: none;
 }
 
-.steps-list { margin: 20px 0; }
-.steps-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.steps-list i { color: var(--accent); }
+.steps-list {
+    margin: 20px 0;
+}
+
+.steps-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.steps-list i {
+    color: var(--accent);
+}
 
 .alert-box {
     background: rgba(255, 255, 0, 0.1);
@@ -804,15 +1445,26 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     margin-bottom: 20px;
 }
 
-/* Page: Problem Statements specific */
+/* ============================================
+   PROBLEM STATEMENTS PAGE SPECIFIC
+   ============================================ */
 .page-header {
     padding: 120px 0 50px;
     background: linear-gradient(to bottom, #131b2c, var(--bg-dark));
     text-align: center;
 }
-.page-header h1 { font-size: 3rem; color: var(--accent); margin-bottom: 10px; }
-.page-header p { color: var(--text-muted); }
 
+.page-header h1 {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: var(--text-muted);
+}
+
+/* Controls Section */
 .controls-section {
     background: #0f1623;
     padding: 20px 0;
@@ -830,11 +1482,13 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     align-items: center;
 }
 
+/* Search Wrapper */
 .search-wrapper {
     position: relative;
     flex: 1;
     min-width: 250px;
 }
+
 .search-wrapper i {
     position: absolute;
     left: 15px;
@@ -842,6 +1496,7 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     transform: translateY(-50%);
     color: var(--text-muted);
 }
+
 .search-wrapper input {
     width: 100%;
     padding: 10px 10px 10px 40px;
@@ -852,6 +1507,7 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     font-family: inherit;
 }
 
+/* Filter Wrapper */
 .filter-wrapper {
     display: flex;
     gap: 10px;
@@ -866,12 +1522,15 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     font-size: 0.9rem;
     transition: 0.2s;
 }
-.filter-btn:hover, .filter-btn.active {
+
+.filter-btn:hover,
+.filter-btn.active {
     background: var(--accent);
     color: #000;
     border-color: var(--accent);
 }
 
+/* Problems Grid */
 .problems-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -890,69 +1549,195 @@ h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; }
     flex-direction: column;
 }
 
-.problem-text { margin-bottom: 10px; }
-.challenge-text { font-style: italic; color: #fff; margin-bottom: 15px; padding-left: 10px; border-left: 3px solid var(--secondary); }
+.problem-text {
+    margin-bottom: 10px;
+}
+
+.challenge-text {
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 3px solid var(--secondary);
+}
+
 .features-list {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     padding: 15px;
     border-radius: 4px;
     margin-top: auto;
 }
-.features-list h4 { font-size: 0.9rem; color: var(--accent); margin-bottom: 5px; }
-.features-list ul { list-style: disc; padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); }
 
-/* FAB */
+.features-list h4 {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+.features-list ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   FLOATING ACTION BUTTON (FAB)
+   ============================================ */
 .fab {
     position: fixed;
-    bottom: 20px; right: 20px;
-    width: 60px; height: 60px;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
     background: var(--accent);
     border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     font-size: 1.5rem;
-    display: none; /* Mobile only */
+    display: none;
     z-index: 900;
 }
 
-/* Responsiveness */
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
+   ============================================ */
 @media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: var(--nav-height);
-        right: -100%;
-        width: 80%;
-        height: calc(100vh - var(--nav-height));
-        background: #0f1623;
-        flex-direction: column;
-        padding: 40px;
-        transition: 0.3s;
-        border-left: 1px solid var(--border);
+    /* Navigation Mobile */
+    .mobile-toggle {
+        display: block;
     }
-    .nav-links.active { right: 0; }
-    .mobile-toggle { display: block; }
-    .nav-cta { display: none; } /* Use FAB instead */
-    .fab { display: block; }
-    
-    .hero-content h1 { font-size: 2.5rem; }
-    .hero-meta { font-size: 0.9rem; flex-direction: column; gap: 5px; }
-    .countdown-grid { gap: 15px; }
-    .time-box span:first-child { font-size: 1.5rem; }
-    
-    .timeline::before { left: 20px; }
-    .timeline-item { padding-left: 40px; }
-    
-    .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-    
-    .filter-bar { flex-direction: column; align-items: stretch; }
+
+    .nav-links {
+        position: absolute;
+        top: var(--nav-height);
+        right: 0;
+        width: 100%;
+        background: var(--bg-dark);
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .fab {
+        display: block;
+    }
+
+    /* Hero Mobile */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-meta {
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Countdown Mobile */
+    .countdown-grid {
+        gap: 15px;
+    }
+
+    .time-box span:first-child {
+        font-size: 1.5rem;
+    }
+
+    /* About Section Mobile */
+    .about-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .about-highlight {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .highlight-card {
+        width: 100%;
+    }
+
+    /* Timeline Mobile */
+    .timeline {
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-dot {
+        left: 0;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    /* Footer Mobile */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+
+    /* Filter Bar Mobile */
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
+/* ============================================
+   RESPONSIVE DESIGN - DESKTOP
+   ============================================ */
 @media (min-width: 769px) {
-    .timeline::before { left: 50%; transform: translateX(-50%); }
-    .timeline-item { width: 50%; margin-bottom: 0; padding: 0 40px; }
-    .timeline-item:nth-child(odd) { left: 0; text-align: right; }
-    .timeline-item:nth-child(even) { left: 50%; }
-    .timeline-item:nth-child(odd) .timeline-dot { right: -10px; left: auto; }
-    .timeline-item:nth-child(even) .timeline-dot { left: -10px; }
-    
-    /* Connect vertical lines logic for desktop needs slightly more complex CSS, simplified here for reliability */
+    /* Timeline Desktop Layout */
+    .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        width: 50%;
+        margin-bottom: 0;
+        padding: 0 40px;
+    }
+
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+        right: -10px;
+        left: auto;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -10px;
+    }
 }

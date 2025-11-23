@@ -18,7 +18,7 @@ fetch("problem-data.json")
                 <div class="accordion-content">
                     <p><strong>Problem:</strong> ${problem.problem}</p>
                     <p><strong>Challenge:</strong> ${problem.challenge}</p>
-                    <ul>
+                    <ul class="feature-list">
                         ${problem.features.map(f => `<li>${f}</li>`).join("")}
                     </ul>
                 </div>

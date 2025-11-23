@@ -1,3 +1,4 @@
+/* problem-statements.css */
 body {
     background: #0a0e17;
     color: #e0e6ed;
@@ -21,19 +22,35 @@ body {
 
 .title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
     position: relative;
+    color: #ffffff;
 }
 
 .title::after {
-    content: '';
+    content: "";
     display: block;
-    width: 60px;
-    height: 4px;
-    background: #00f0ff;
-    margin: 10px auto 0;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, #00f0ff, #0077ff);
+    margin: 12px auto 0;
+    border-radius: 3px;
 }
+
+/* Optional for small screens */
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .title::after {
+        width: 50px;
+    }
+}
+
 
 .subtitle {
     text-align: center;
@@ -118,4 +135,24 @@ h2 {
 .open-card ul {
     padding-left: 20px;
     margin-top: 10px;
+}
+
+.feature-list {
+    list-style: none;           /* remove default bullets */
+    padding-left: 1.5rem;       /* space for our custom arrow */
+    margin: 0;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 1rem;         /* space between arrow and text */
+    margin-bottom: 0.4rem;      /* optional spacing between points */
+}
+
+.feature-list li::before {
+    content: "➤";               /* small arrow */
+    position: absolute;
+    left: 0;
+    top: 0.15em;                /* vertically align with text */
+    font-size: 0.75em;          /* make it small */
 }
