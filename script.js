@@ -75,6 +75,23 @@ function initMobileMenu() {
             }
         });
     });
+    // Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    // If click is NOT inside navLinks or mobileToggle
+    if (
+        !elements.navLinks.contains(e.target) &&
+        !elements.mobileToggle.contains(e.target)
+    ) {
+        elements.navLinks.classList.remove('active');
+        elements.mobileToggle.setAttribute('aria-expanded', 'false');
+
+        const icon = elements.mobileToggle.querySelector('i');
+        if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        }
+    }
+});
 }
 
 
