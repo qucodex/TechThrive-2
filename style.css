@@ -351,7 +351,7 @@ h1, h2, h3 {
    COUNTDOWN SECTION (Smaller & Synchronized)
    ============================================ */
 .countdown-section {
-    border-top: 1px solid var(--border);
+    /* border-top: 1px solid var(--border); */
     background-color: var(--bg-black);
     /* background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);  */
     padding: 40px 0; /* Slightly reduced padding */
