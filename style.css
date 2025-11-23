@@ -205,7 +205,8 @@ h1, h2, h3 {
 
 .loader-logo {
   width: 120px;
-  margin-bottom: 20px;
+   margin: 0 auto 20px auto;   /* THIS CENTERS IT */
+  display: block;  
 }
 
 
@@ -241,6 +242,36 @@ h1, h2, h3 {
     height: 52px;
     width: auto;
 }
+/* =============================
+   NAVBAR LOGO SVG (INLINE)
+   ============================= */
+
+.logo-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* THIS is the actual fix */
+.logo-img svg {
+    height: 52px;     /* visible size */
+    width: auto;
+    display: block;
+}
+
+/* hover (optional, remove if not needed) */
+.logo-img svg:hover {
+    transform: scale(1.05);
+    transition: 0.25s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .logo-img svg {
+        height: 44px;
+    }
+}
+
 
 /* Navigation Links */
 .nav-links {
