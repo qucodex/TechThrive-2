@@ -26,6 +26,21 @@
 
 <body>
 
+    <div id="loader">
+        <div class="loader-box">
+
+            <!-- LOGO -->
+            <img src="assets/Logo2.png" alt="Hackathon Logo" class="loader-logo">
+
+            <!-- Line -->
+            <div class="line">
+                <span id="progress"></span>
+            </div>
+
+        </div>
+    </div>
+
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -97,7 +112,7 @@
                 <i class="fa-solid fa-download"></i> Download Problem Statements
             </a>
         </div>
-        
+
     </header>
 
 
@@ -448,7 +463,10 @@
                         <i class="fa-solid fa-plus"></i>
                     </button>
                     <div class="faq-answer">
-                        In Round 1, all teams will be evaluated based on innovation, implementation, impact, and presentation. The top 10 teams will then qualify for the final round, where they will deliver a 10-minute presentation followed by a face-to-face Q&A session with expert faculty. The winners will be selected from these top 10 finalists.
+                        In Round 1, all teams will be evaluated based on innovation, implementation, impact, and
+                        presentation. The top 10 teams will then qualify for the final round, where they will deliver a
+                        10-minute presentation followed by a face-to-face Q&A session with expert faculty. The winners
+                        will be selected from these top 10 finalists.
                     </div>
                 </div>
 
@@ -504,6 +522,22 @@
         <i class="fa-solid fa-user-plus"></i>
     </button>
     <script>
+
+        let load = 0;
+        const loader = document.getElementById("loader");
+        const progress = document.getElementById("progress");
+
+        const loading = setInterval(() => {
+            load++;
+            progress.style.width = load + "%";
+
+            if (load >= 100) {
+                clearInterval(loading);
+                loader.style.display = "none";
+            }
+        }, 20);
+
+
         console.log("%cHello, Hacker 👨‍💻", "color:#00ffcc; font-size:18px; font-weight:bold;");
         console.log("Most people will never see this.");
         console.log("You just proved you think differently.");
