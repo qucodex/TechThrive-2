@@ -507,51 +507,7 @@ window.addEventListener('scroll', () => {
 });
 
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const icon = mobileToggle.querySelector('i');
 
-        if (mobileToggle && navLinks) {
-            console.log("Mobile menu script loaded successfully."); // Debug message
-
-            mobileToggle.addEventListener('click', function() {
-                console.log("Toggle clicked."); // Debug message
-                
-                // 1. Toggle the 'active' class
-                navLinks.classList.toggle('active');
-                
-                // 2. Toggle the Icon
-                const isOpen = navLinks.classList.contains('active');
-                
-                // Update accessibility
-                mobileToggle.setAttribute('aria-expanded', isOpen);
-
-                // Swap Icons (Bars vs X)
-                if (isOpen) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-xmark'); 
-                } else {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-xmark');
-                }
-            });
-            
-            // Close menu when a link is clicked
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileToggle.setAttribute('aria-expanded', 'false');
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-xmark');
-                });
-            });
-        } else {
-            console.error("Error: Could not find .mobile-toggle or .nav-links in HTML.");
-        }
-    });
-</script>
 <script>
     const timelineCards = document.querySelectorAll('.timeline-content');
 

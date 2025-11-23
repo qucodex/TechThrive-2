@@ -46,6 +46,36 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// --- MOBILE MENU ---
+function initMobileMenu() {
+    if(!elements.mobileToggle) return;
+    
+    elements.mobileToggle.addEventListener('click', () => {
+        const isExpanded = elements.mobileToggle.getAttribute('aria-expanded') === 'true';
+        elements.mobileToggle.setAttribute('aria-expanded', !isExpanded);
+        elements.navLinks.classList.toggle('active');
+        
+        // Icon toggle
+        const icon = elements.mobileToggle.querySelector('i');
+        if(icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        }
+    });
+
+    // Close menu when clicking a link
+    elements.navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            elements.navLinks.classList.remove('active');
+            elements.mobileToggle.setAttribute('aria-expanded', 'false');
+            const icon = elements.mobileToggle.querySelector('i');
+            if(icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+    });
+}
 
 
 // --- COUNTDOWN TIMER ---
