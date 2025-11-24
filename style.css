@@ -791,6 +791,93 @@ h1, h2, h3 {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
+/* --- Instagram Interaction CSS --- */
+
+/* 1. Reset Link Styles */
+a.digital-card {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 2. Style the New Instagram Icon */
+.insta-icon {
+    position: absolute;
+    font-size: 5rem;
+    opacity: 0; /* Hidden by default */
+    transform: scale(0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Instagram Gradient Text Effect */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(214, 36, 159, 0.5));
+}
+
+/* 3. The Icon Swap Animation */
+/* When hovering the card, hide the graduation cap */
+.digital-card:hover .main-icon {
+    opacity: 0;
+    transform: scale(0.5) rotate(15deg);
+    transition: all 0.5s ease;
+}
+
+/* When hovering the card, show the Instagram icon */
+.digital-card:hover .insta-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* 4. Change the Glow Color on Hover */
+/* When hovering the wrapper, change the glow-circle background */
+.theme-visual:hover .glow-circle {
+    /* Instagram Brand Gradient */
+    background: radial-gradient(circle, rgba(214, 36, 159, 0.6) 0%, transparent 70%);
+    animation-duration: 2s; /* Pulse faster on hover */
+}
+
+/* Optional: Change border color of card on hover to match */
+.digital-card:hover {
+    border-color: #d6249f;
+    box-shadow: 0 0 40px rgba(214, 36, 159, 0.4);
+}
+
+/* --- Desktop Specific Scaling --- */
+@media screen and (min-width: 1024px) {
+    
+    /* 1. Increase the container height so elements don't feel cramped */
+    .theme-visual {
+        height: 550px; /* Increased from 400px */
+    }
+
+    /* 2. Make the card significantly larger */
+    .digital-card {
+        width: 300px;  /* Increased from 220px */
+        height: 300px; /* Increased from 220px */
+    }
+
+    /* 3. Scale up the background glow to match */
+    .glow-circle {
+        width: 420px;  /* Increased from 300px */
+        height: 420px; /* Increased from 300px */
+    }
+
+    /* 4. Increase the icon size inside the larger card */
+    .main-icon, .insta-icon {
+        font-size: 7rem; /* Increased from 5rem */
+    }
+    
+    /* 5. Adjust floating badges positions for the larger card */
+    .top-right {
+        top: -30px;
+        right: -50px;
+    }
+    
+    .bottom-left {
+        bottom: -30px;
+        left: -50px;
+    }
+}
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 992px) {
