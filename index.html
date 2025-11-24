@@ -710,6 +710,32 @@
             });
         });
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const target = document.querySelector('.theme-visual');
+
+        // This Observer setup detects when the element is in the middle of the screen
+        const options = {
+            root: null, // viewport
+            // 'rootMargin' defines the active area. 
+            // -45% from top and -45% from bottom creates a 10% strip in the middle.
+            rootMargin: '-45% 0px -45% 0px', 
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    target.classList.add('scroll-active');
+                } else {
+                    target.classList.remove('scroll-active');
+                }
+            });
+        }, options);
+
+        observer.observe(target);
+    });
+    </script>
 
 
     <script src="problem-statements.js"></script>

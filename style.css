@@ -701,208 +701,183 @@ h1, h2, h3 {
 
 /* --- Right Column: Visual Animation --- */
 .theme-visual {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 400px;
-}
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 400px;
+        }
 
-/* The Glowing Background Blob */
-.glow-circle {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    opacity: 0.4;
-    animation: glow-pulse 4s infinite ease-in-out;
-    z-index: 0;
-}
+        /* The Glowing Background Blob */
+        .glow-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            opacity: 0.4;
+            animation: glow-pulse 4s infinite ease-in-out;
+            z-index: 0;
+            transition: background 0.5s ease;
+        }
 
-/* The Central "Digital Card" */
-.digital-card {
-    position: relative;
-    width: 220px;
-    height: 220px;
-    background: rgba(20, 20, 20, 0.6);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--accent);
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    transform: rotate(-5deg);
-    transition: transform 0.3s ease;
-}
+        /* The Central "Digital Card" Link */
+        a.digital-card {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--accent);
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            transform: rotate(-5deg);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-.digital-card:hover {
-    transform: rotate(0deg) scale(1.05);
-}
+        /* Graduation Cap Icon (Default) */
+        .main-icon {
+            font-size: 5rem;
+            color: #fff;
+            filter: drop-shadow(0 0 10px var(--accent));
+            transition: all 0.4s ease;
+        }
 
-.main-icon {
-    font-size: 5rem;
-    color: #fff;
-    filter: drop-shadow(0 0 10px var(--accent));
-}
+        /* Instagram Icon (Hidden by Default) */
+        .insta-icon {
+            position: absolute;
+            font-size: 5rem;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            
+            /* Gradient Text */
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(214, 36, 159, 0.5));
+        }
 
-/* Floating Elements around the card */
-.floating-badge {
-    position: absolute;
-    background: #1a1a1a;
-    border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    animation: float 3s ease-in-out infinite;
-}
+        /* Floating Badges */
+        .floating-badge {
+            position: absolute;
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
 
-.floating-badge i {
-    color: var(--accent);
-}
+        .floating-badge i { color: var(--accent); }
 
-.top-right {
-    top: -20px;
-    right: -40px;
-    animation-delay: 0s;
-}
+        .top-right { top: -20px; right: -40px; animation-delay: 0s; }
+        .bottom-left { bottom: -20px; left: -40px; animation-delay: 1.5s; }
 
-.bottom-left {
-    bottom: -20px;
-    left: -40px;
-    animation-delay: 1.5s;
-}
+        /* Keyframe Animations */
+        @keyframes glow-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.1); opacity: 0.6; }
+        }
 
-/* --- Animations --- */
-@keyframes glow-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.1); opacity: 0.6; }
-}
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-/* --- Instagram Interaction CSS --- */
+        /* =========================================
+           2. DESKTOP LOGIC (Min-width: 1024px)
+           Trigger: HOVER
+           ========================================= */
+        @media screen and (min-width: 1024px) {
+            
+            /* Desktop Scaling */
+            .theme-visual { height: 550px; }
+            .digital-card { width: 300px; height: 300px; }
+            .glow-circle { width: 420px; height: 420px; }
+            .main-icon, .insta-icon { font-size: 7rem; }
+            .top-right { top: -30px; right: -50px; }
+            .bottom-left { bottom: -30px; left: -50px; }
 
-/* 1. Reset Link Styles */
-a.digital-card {
-    text-decoration: none;
-    cursor: pointer;
-}
+            /* HOVER TRANSITIONS (Desktop Only) */
+            
+            /* 1. Rotate card to straight */
+            .digital-card:hover {
+                transform: rotate(0deg) scale(1.05);
+                border-color: #d6249f;
+                box-shadow: 0 0 40px rgba(214, 36, 159, 0.4);
+            }
 
-/* 2. Style the New Instagram Icon */
-.insta-icon {
-    position: absolute;
-    font-size: 5rem;
-    opacity: 0; /* Hidden by default */
-    transform: scale(0.5);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
-    /* Instagram Gradient Text Effect */
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(214, 36, 159, 0.5));
-}
+            /* 2. Hide Main Icon */
+            .digital-card:hover .main-icon {
+                opacity: 0;
+                transform: scale(0.5) rotate(15deg);
+            }
 
-/* 3. The Icon Swap Animation */
-/* When hovering the card, hide the graduation cap */
-.digital-card:hover .main-icon {
-    opacity: 0;
-    transform: scale(0.5) rotate(15deg);
-    transition: all 0.5s ease;
-}
+            /* 3. Show Insta Icon */
+            .digital-card:hover .insta-icon {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
 
-/* When hovering the card, show the Instagram icon */
-.digital-card:hover .insta-icon {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-}
+            /* 4. Change Glow Color */
+            .theme-visual:hover .glow-circle {
+                background: radial-gradient(circle, rgba(214, 36, 159, 0.6) 0%, transparent 70%);
+                animation-duration: 2s;
+            }
+        }
 
-/* 4. Change the Glow Color on Hover */
-/* When hovering the wrapper, change the glow-circle background */
-.theme-visual:hover .glow-circle {
-    /* Instagram Brand Gradient */
-    background: radial-gradient(circle, rgba(214, 36, 159, 0.6) 0%, transparent 70%);
-    animation-duration: 2s; /* Pulse faster on hover */
-}
+        /* =========================================
+           3. MOBILE LOGIC (Max-width: 1023px)
+           Trigger: SCROLL (via .scroll-active class)
+           ========================================= */
+        @media screen and (max-width: 1023px) {
+            
+            /* Responsive Layout Adjustments */
+            .theme-visual { height: 350px; margin-top: 30px; }
+            .digital-card { width: 220px; height: 220px; } /* Reset to base size */
 
-/* Optional: Change border color of card on hover to match */
-.digital-card:hover {
-    border-color: #d6249f;
-    box-shadow: 0 0 40px rgba(214, 36, 159, 0.4);
-}
+            /* SCROLL TRANSITIONS (Mobile Only) */
+            /* Note: We use .theme-visual.scroll-active instead of :hover */
 
-/* --- Desktop Specific Scaling --- */
-@media screen and (min-width: 1024px) {
-    
-    /* 1. Increase the container height so elements don't feel cramped */
-    .theme-visual {
-        height: 550px; /* Increased from 400px */
-    }
+            /* 1. Card Styles when Active */
+            .theme-visual.scroll-active .digital-card {
+                /* We don't scale up as much on mobile to prevent overflow */
+                transform: rotate(0deg) scale(1.02); 
+                border-color: #d6249f;
+                box-shadow: 0 0 40px rgba(214, 36, 159, 0.4);
+            }
 
-    /* 2. Make the card significantly larger */
-    .digital-card {
-        width: 300px;  /* Increased from 220px */
-        height: 300px; /* Increased from 220px */
-    }
+            /* 2. Hide Main Icon when Active */
+            .theme-visual.scroll-active .main-icon {
+                opacity: 0;
+                transform: scale(0.5) rotate(15deg);
+            }
 
-    /* 3. Scale up the background glow to match */
-    .glow-circle {
-        width: 420px;  /* Increased from 300px */
-        height: 420px; /* Increased from 300px */
-    }
+            /* 3. Show Insta Icon when Active */
+            .theme-visual.scroll-active .insta-icon {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
 
-    /* 4. Increase the icon size inside the larger card */
-    .main-icon, .insta-icon {
-        font-size: 7rem; /* Increased from 5rem */
-    }
-    
-    /* 5. Adjust floating badges positions for the larger card */
-    .top-right {
-        top: -30px;
-        right: -50px;
-    }
-    
-    .bottom-left {
-        bottom: -30px;
-        left: -50px;
-    }
-}
-
-/* --- Mobile Responsiveness --- */
-@media (max-width: 992px) {
-    .theme-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .theme-description {
-        margin: 0 auto 30px auto;
-    }
-
-    .theme-features {
-        margin: 0 auto;
-    }
-    
-    .theme-visual {
-        height: 300px;
-        margin-top: 30px;
-    }
-    
-    .theme-title {
-        font-size: 2.5rem;
-    }
-}
+            /* 4. Change Glow Color when Active */
+            .theme-visual.scroll-active .glow-circle {
+                background: radial-gradient(circle, rgba(214, 36, 159, 0.6) 0%, transparent 70%);
+                animation-duration: 2s;
+            }
+        }
 
 /* ============================================
    ABOUT SECTION
