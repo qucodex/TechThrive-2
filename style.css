@@ -885,6 +885,7 @@ h1, h2, h3 {
 .about-section {
     border-top: 1px solid var(--border);
     background-color: var(--bg-black); 
+    
 }
 
 .about-wrapper {
@@ -963,6 +964,11 @@ h1, h2, h3 {
 .timeline-section {
     border-top: 1px solid var(--border);
     background-color: var(--bg-black);
+    background-image: 
+        linear-gradient(rgba(30, 41, 59, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 41, 59, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 60px 20px;
      /* background: radial-gradient(circle at top, #0f172a 0%, #020617 70%); */
 }
 
@@ -1244,6 +1250,11 @@ h1, h2, h3 {
 .prize-section {
     border-top: 1px solid var(--border);
     background-color: var(--bg-black);
+    background-image: 
+        linear-gradient(rgba(30, 41, 59, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 41, 59, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 60px 20px;
     position: relative;
     padding-bottom: 80px; /* Extra space at bottom */
 }
@@ -1434,7 +1445,10 @@ h1, h2, h3 {
 .contact-mini-section {
     /* background: radial-gradient(circle at top, #0f172a 0%, #020617 70%); */
     background-color: var(--bg-black);
-    
+    background-image: 
+        linear-gradient(rgba(30, 41, 59, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 41, 59, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
     padding: 60px 20px;
     display: flex;
     justify-content: center;
