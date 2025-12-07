@@ -2182,3 +2182,247 @@ h1, h2, h3 {
         font-size: 1rem;
     }
 }
+
+/* --- Winners Section Layout --- */
+#winners-section {
+    /* Base color fallback */
+    background-color: var(--bg-black);
+    
+    /* Image with Dark Gradient Overlay 
+       (0.85 opacity ensures text readability) */
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(3, 7, 18, 0.85), 
+        rgba(3, 7, 18, 0.95)
+    ), url('assets/winnerSectionBg.JPG');
+    /* ^ Replace the URL above with your local path: url('assets/your-bg.jpg') */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Optional: This creates a "Parallax" effect where the bg stays still while scrolling */
+    background-attachment: fixed; 
+    
+    padding: 80px 20px;
+    font-family: var(--font-body);
+    position: relative;
+    overflow: hidden; 
+}
+
+.winners-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    font-size: 2.5rem;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title .highlight {
+    color: var(--accent);
+    text-shadow: 0 0 15px var(--accent-glow);
+}
+
+.podium-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+/* --- Card Architecture --- */
+.winner-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 0; /* Remove padding to let image touch edges if desired, or keep neat */
+    padding-bottom: 20px;
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.winner-card:hover {
+    transform: translateY(-10px);
+}
+
+/* --- Team Photo Styling --- */
+.team-photo-wrapper {
+    width: 100%;
+    height: 180px; /* Fixed height for uniformity */
+    position: relative;
+    border-bottom: 1px solid var(--border);
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dark overlay on photo that lightens on hover */
+.photo-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, var(--bg-card), transparent);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.winner-card:hover .photo-overlay {
+    opacity: 0.2;
+}
+
+/* Rank Badge - Now sits on the image corner */
+.rank-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* --- Info Text --- */
+.winner-info {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.team-name {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    margin: 10px 0 5px;
+    font-size: 1.3rem;
+}
+
+.project-title {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.prize {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- SPECIFIC RANK STYLING --- */
+
+/* 1st Place (Champion) */
+.winner-card.champion {
+    width: 360px; /* Slightly wider */
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+    order: 2; 
+    z-index: 2;
+}
+
+.winner-card.champion .team-photo-wrapper {
+    height: 220px; /* Taller image */
+    border-bottom-color: var(--accent);
+}
+
+.winner-card.champion .rank-badge {
+    background: var(--accent);
+    color: var(--bg-black);
+    border-color: var(--accent);
+}
+
+.winner-card.champion .prize {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.crown-icon {
+    font-size: 2.5rem;
+    position: absolute;
+    top: -25px; /* Adjust based on new card layout */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px var(--accent));
+}
+
+/* 2nd Place */
+.winner-card.runner-up {
+    border-top: 4px solid var(--secondary); /* Top accent */
+    order: 1;
+}
+
+.winner-card.runner-up .prize {
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    background: rgba(112, 0, 255, 0.1);
+}
+
+/* 3rd Place */
+.winner-card.second-runner-up {
+    border-top: 4px solid var(--text-muted); /* Top accent */
+    order: 3;
+}
+
+.winner-card.second-runner-up .prize {
+    color: var(--text-main);
+    border: 1px solid var(--text-muted);
+    background: rgba(148, 163, 184, 0.1);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -5px); }
+    50% { transform: translate(-50%, -15px); }
+}
+
+.winner-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .podium-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    
+    .winner-card.champion { order: 1; width: 100%; max-width: 400px; }
+    .winner-card.runner-up { order: 2; width: 100%; max-width: 400px; }
+    .winner-card.second-runner-up { order: 3; width: 100%; max-width: 400px; }
+    
+    .crown-icon { top: -35px; }
+}
