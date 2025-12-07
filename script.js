@@ -232,3 +232,35 @@ function initFilters() {
         });
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all winner cards
+    const cards = document.querySelectorAll('.winner-card');
+
+    // Create an observer to check when cards enter the screen
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add the 'show' class to trigger CSS transition
+                entry.target.classList.add('show');
+                
+                // Optional: Stop observing once shown
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2 // Trigger when 20% of the card is visible
+    });
+
+    // Apply delays via JS (optional, or rely on CSS classes) and observe
+    cards.forEach((card, index) => {
+        // Set transition delay based on podium position for staggered effect
+        // 2nd place (left) appears, then 1st (center), then 3rd (right)
+        // Note: Logic depends on visual order, here we just use index
+        if(card.classList.contains('runner-up')) card.style.transitionDelay = '0ms';
+        if(card.classList.contains('champion')) card.style.transitionDelay = '200ms';
+        if(card.classList.contains('second-runner-up')) card.style.transitionDelay = '400ms';
+        
+        observer.observe(card);
+    });
+});
